@@ -29,7 +29,6 @@ def get_secret(secret_name: str, region_name: str = None) -> dict:
         secret_dict = json.loads(secret_str)
 
         # Cache the secret for future use
-        _secret_cache[secret_name] = secret_dict
         return secret_dict
 
     except client.exceptions.ResourceNotFoundException:
