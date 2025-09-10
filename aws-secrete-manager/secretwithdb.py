@@ -10,11 +10,6 @@ def get_secret(secret_name: str, region_name: str = None) -> dict:
     """
     Fetch a secret from AWS Secrets Manager with error handling and caching.
     """
-    global _secret_cache
-
-    # Return cached secret if available
-    if secret_name in _secret_cache:
-        return _secret_cache[secret_name]
 
     # Default region from environment or fallback
     region_name = region_name or os.getenv("AWS_REGION", "us-east-1")
