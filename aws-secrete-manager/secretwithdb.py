@@ -4,11 +4,6 @@ import boto3
 from botocore.exceptions import ClientError
 
 # -----------------------------
-# Global cache for secrets
-# -----------------------------
-_secret_cache = {}
-
-# -----------------------------
 # Function to fetch secrets
 # -----------------------------
 def get_secret(secret_name: str, region_name: str = None) -> dict:
